@@ -26,4 +26,5 @@ class TestCase(unittest.TestCase):
         # 输入用户ID和密码
         driver.find.element(By.NAME, "sid").send_keys("*********")
         driver.find.element(By.NAME, "PIN").send_keys("********")
-        
+        # 点击登录
+        driver.find.element(By.XPATH, "//input[@value='Login']").click()
