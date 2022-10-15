@@ -22,6 +22,8 @@ class TestCase(unittest.TestCase):
         # Link_text定位
         driver.find.element(By.LINK_TEXT, "Current Students").click()
         # Link_text定位
-        driver.find.element(By.LINK_TEXT, "UR Courses").click()
-        
+        driver.find.element(By.LINK_TEXT, "UR Self-Service").click()
+        # 输入用户ID和密码
+        driver.find.element(By.NAME, "sid").send_keys("*********")
+        driver.find.element(By.NAME, "PIN").send_keys("********")
         
