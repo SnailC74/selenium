@@ -12,8 +12,11 @@ from selenium.webdriver.common.by import By
 //driver.find.element(By.PARTIAL_LINK, "图").click()
 
 class TestCase(unittest.TestCase):
-  
     def test_1_login(self):
+        """
+        登录
+        :return:
+        """
         global driver
         # 打开浏览器
         driver = webdriver.chrome()
@@ -28,3 +31,51 @@ class TestCase(unittest.TestCase):
         driver.find.element(By.NAME, "PIN").send_keys("********")
         # 点击登录
         driver.find.element(By.XPATH, "//input[@value='Login']").click()
+        
+    def test_2_search_class(self):
+        """
+        查询课程
+        :return
+        """
+        global driver
+        # 打开浏览器
+        driver = webdriver.chrome()
+        driver.implicitly_wait(10)
+        # 加载网页
+        driver.get("https://https://www.uregina.ca/")
+        # Link_text定位
+        driver.find.element(By.LINK_TEXT, "Current Students").click()
+        # Link_text定位
+        driver.find.element(By.LINK_TEXT, "UR Self-Service").click()
+        # 输入用户ID和密码
+        driver.find.element(By.NAME, "sid").send_keys("*********")
+        driver.find.element(By.NAME, "PIN").send_keys("********")
+        # 点击登录
+        driver.find.element(By.XPATH, "//input[@value='Login']").click()
+        
+        # 查询课程
+        # Link_text定位
+        driver.find.element(By.LINK_TEXT, "Student").click()
+        # Link_text定位
+        driver.find.element(By.LINK_TEXT, "Registration").click()
+        # Link_text定位
+        driver.find.element(By.LINK_TEXT, "Search for Classes").click()
+        # 选中Search by Term下拉框中的2023 Winter
+        sel = select(driver.find.element(By.NAME, "p_term"))
+        sel.select_by_value("202310")
+        # sel.select_by_visible_text("2023 Winter")
+        # sel.select_by_index("1")
+        # 搜索
+        driver.find.element(By.XPATH, "//input[@value='Submit']").click()
+        # 选中Subject下拉框中的Computer Science
+        sel = select(driver.find.element(By.NAME, "sel_subj"))
+        sel.select_by_value("CS")
+        # sel.select_by_visible_text("Computer Science")
+        # sel.select_by_index("17")
+        # 搜索
+        driver.find.element(By.XPATH, "//input[@value='Course Search']").click()
+        # 点击查看335 Computer Networks课程
+        driver.find.element(By.NAME, "SUB_BTN").click()
+        
+ if __name__ == '__main__':
+     unittest.main()
