@@ -3,13 +3,13 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 # ID定位
-driver.find.element(By.ID, "kw").send_keys("University of Regina")
+//driver.find.element(By.ID, "kw").send_keys("University of Regina")
 # Name定位
-driver.find.element(By.NAME, "wd").send_keys("University of Regina")
+//driver.find.element(By.NAME, "wd").send_keys("University of Regina")
 # Link_text定位
-driver.find.element(By.LINK_TEXT, "地图").click()
+//driver.find.element(By.LINK_TEXT, "地图").click()
 # Partial_link定位
-driver.find.element(By.PARTIAL_LINK, "图").click()
+//driver.find.element(By.PARTIAL_LINK, "图").click()
 
 class TestCase(unittest.TestCase):
   
