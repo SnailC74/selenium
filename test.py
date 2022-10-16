@@ -77,7 +77,6 @@ class TestCase(unittest.TestCase):
         # 点击查看335 Computer Networks课程
         driver.find.element(By.NAME, "SUB_BTN").click()
         
-                
      def test_3_add_and_delete_class(self):
         """
         添加/删除课程
