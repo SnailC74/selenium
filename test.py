@@ -53,12 +53,11 @@ class TestCase(unittest.TestCase):
         # 点击登录
         driver.find.element(By.XPATH, "//input[@value='Login']").click()
         
-        # 查询课程
-        # Link_text定位
+        # 进入学生界面
         driver.find.element(By.LINK_TEXT, "Student").click()
-        # Link_text定位
+        # 进入注册界面
         driver.find.element(By.LINK_TEXT, "Registration").click()
-        # Link_text定位
+        # 查询课程
         driver.find.element(By.LINK_TEXT, "Search for Classes").click()
         # 选中Search by Term下拉框中的2023 Winter
         sel = select(driver.find.element(By.NAME, "p_term"))
@@ -98,12 +97,11 @@ class TestCase(unittest.TestCase):
         # 点击登录
         driver.find.element(By.XPATH, "//input[@value='Login']").click()
         
-        # 查询课程
-        # Link_text定位
+        # 进入学生界面
         driver.find.element(By.LINK_TEXT, "Student").click()
-        # Link_text定位
+        # 进入注册界面
         driver.find.element(By.LINK_TEXT, "Registration").click()
-        # Link_text定位
+        # 查询课程
         driver.find.element(By.LINK_TEXT, "Search for Classes").click()
         # 选中Search by Term下拉框中的2023 Winter
         sel = select(driver.find.element(By.NAME, "p_term"))
@@ -132,6 +130,29 @@ class TestCase(unittest.TestCase):
         sel.select_by_value("Drop Self-Serv 100% Ref No Grd")
         # 提交修改
         driver.find.element(By.XPATH, "//input[@value='Submit Changes']").click()
+        
+     def test_3_view_grade(self):
+        """
+        查看分数
+        :return:
+        """
+        global driver
+        # 打开浏览器
+        driver = webdriver.chrome()
+        driver.implicitly_wait(10)
+        # 加载网页
+        driver.get("https://https://www.uregina.ca/")
+        # Link_text定位
+        driver.find.element(By.LINK_TEXT, "Current Students").click()
+        # Link_text定位
+        driver.find.element(By.LINK_TEXT, "UR Self-Service").click()
+        # 输入用户ID和密码
+        driver.find.element(By.NAME, "sid").send_keys("*********")
+        driver.find.element(By.NAME, "PIN").send_keys("********")
+        # 点击登录
+        driver.find.element(By.XPATH, "//input[@value='Login']").click()
+        
+        
         
  if __name__ == '__main__':
      unittest.main()
