@@ -17,7 +17,8 @@ class TestCase(unittest.TestCase):
         driver.find.element(By.LINK_TEXT, "Current Students").click()
         # 选择自助服务界面
         driver.find.element(By.LINK_TEXT, "UR Self-Service").click()
-        lg = LoginPage()
+        lp = LoginPage()
+        lp.login_ecshop()
         
     def test_2_search_class(self):
         """
