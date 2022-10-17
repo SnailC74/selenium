@@ -9,7 +9,7 @@ class LoginPage(BasePage):
     login_loc = (By.XPATH, "//input[@value='Login']")
     
     # 页面动作
-    def login_ecshop(self):
+    def login_service(self):
         self.locator_element(loginPage.userId_loc)
         self.locator_element(loginPage.password_loc)
         self.locator_element(loginPage.login_loc)
