@@ -30,3 +30,14 @@ find_element_by_xpath()
 
 find_element_by_css_selector()
 
+
+
+# 设计模式（封装）
+
+1. 基础层：selenium原生的方法
+
+2. 界面对象层：页面的元素和动作
+
+3. 测试用例层：测试用例和测试数据
+
+页面对象层调用基础层，测试用例层调用页面对象层
