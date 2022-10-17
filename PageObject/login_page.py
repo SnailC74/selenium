@@ -10,6 +10,6 @@ class LoginPage(BasePage):
     
     # 页面动作
     def login_service(self):
-        self.locator_element(loginPage.userId_loc).send_keys("*********")
-        self.locator_element(loginPage.password_loc).send_keys("********")
+        self.send_keys(LoginPage.userId_loc, "*********")
+        self.send_keys(LoginPage.password_loc, "********")
         self.locator_element(loginPage.login_loc).click()
