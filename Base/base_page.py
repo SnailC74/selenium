@@ -9,4 +9,4 @@ class BasePage：
         self.driver.get("https://https://www.uregina.ca/") 
         
     def locator_element(self, loc):
-        return self.driver.find.element(loc)
+        return self.driver.find.element(*loc)
