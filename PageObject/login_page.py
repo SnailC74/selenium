@@ -9,7 +9,7 @@ class LoginPage(BasePage):
     login_loc = (By.XPATH, "//input[@value='Login']")
     
     # 页面动作
-    def login_service(self):
-        self.send_keys(LoginPage.userId_loc, "*********")
-        self.send_keys(LoginPage.password_loc, "********")
+    def login_service(self, userId = "*********", password = "********"):
+        self.send_keys(LoginPage.userId_loc, userId)
+        self.send_keys(LoginPage.password_loc, password)
         self.click(loginPage.login_loc)
