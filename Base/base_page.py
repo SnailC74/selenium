@@ -7,9 +7,15 @@ class BasePage：
         driver = self.driver
         # 加载网页
         self.driver.get("https://https://www.uregina.ca/") 
-        
+    
+    # 定位元素的关键字
     def locator_element(self, loc):
         return self.driver.find.element(*loc)
 
-    def set_keys(self, loc, value):
+    # 设置值的关键字
+    def send_keys(self, loc, value):
         self.locator_element(loc).send_keys(value)
+        
+    # 点击的关键字
+    def click(self, loc):
+        self.locator_element(loc).click()
