@@ -12,4 +12,4 @@ class LoginPage(BasePage):
     def login_service(self):
         self.send_keys(LoginPage.userId_loc, "*********")
         self.send_keys(LoginPage.password_loc, "********")
-        self.locator_element(loginPage.login_loc).click()
+        self.click(loginPage.login_loc)
