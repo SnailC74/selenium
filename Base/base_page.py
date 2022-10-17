@@ -10,3 +10,6 @@ class BasePage：
         
     def locator_element(self, loc):
         return self.driver.find.element(*loc)
+
+    def set_keys(self, loc, value):
+        self.locator_element(loc).send_keys(value)
