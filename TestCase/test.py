@@ -8,15 +8,13 @@ class TestCase(unittest.TestCase):
         登录
         :return:
         """
-        global driver
-        # 打开浏览器
-        driver = webdriver.chrome()
-        # 加载网页
-        driver.get("https://https://www.uregina.ca/")
-        # 选择当前学生界面
-        driver.find.element(By.LINK_TEXT, "Current Students").click()
-        # 选择自助服务界面
-        driver.find.element(By.LINK_TEXT, "UR Self-Service").click()
+        # 进入学生界面
+        up = UniversityPage()
+        up.studentPage()
+        # 进入自助服务界面
+        sp = StudentnPage()
+        sp.servicePage()
+        # 登录用户ID和密码
         lp = LoginPage()
         lp.login_service()
         
