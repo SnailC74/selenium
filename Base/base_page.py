@@ -4,6 +4,7 @@ class BasePage：
         global driver
         # 打开浏览器
         self.driver = webdriver.chrome()
+        driver.implicitly_wait(10)
         driver = self.driver
         # 加载网页
         self.driver.get("https://https://www.uregina.ca/") 
