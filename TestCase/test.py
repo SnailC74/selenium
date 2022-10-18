@@ -18,6 +18,9 @@ class TestCase(unittest.TestCase):
         lp = LoginPage()
         lp.login_service()
         
+        # 断言
+        self.assertEqual(lp.get_except_result, "Exit")
+        
     def test_2_search_class(self):
         """
         查询课程
