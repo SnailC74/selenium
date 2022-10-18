@@ -11,7 +11,7 @@ class SearchClassPage(BasePage):
     submit_loc = (By.XPATH, "//input[@value='Submit']")
     sel_subj_loc = (By.NAME, "sel_subj")
     course_search_loc = (By.XPATH, "//input[@value='Course Search']")
-    sub_btn_loc (By.NAME, "SUB_BTN")
+    sub_btn_loc =  (By.NAME, "SUB_BTN")
     
     # 页面动作
     def search_class(self):
