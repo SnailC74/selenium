@@ -31,8 +31,9 @@ find_element_by_xpath()
 find_element_by_css_selector()
 
 
+# Unittest
 
-# 设计模式（封装）
+# 1. 设计模式（封装）
 
 1. 基础层：selenium原生的方法
 
@@ -41,3 +42,14 @@ find_element_by_css_selector()
 3. 测试用例层：测试用例和测试数据
 
 页面对象层调用基础层，测试用例层调用页面对象层
+
+
+# 2. 断言
+
+判断预期结果与实际结果是否相符
+
+self.assertEqual() 判断两个值是否相等
+
+self.assertTrue() 判断一个值是否为true
+
+self.assertIn() 判断一个值是否在另一个值里面
