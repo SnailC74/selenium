@@ -33,6 +33,12 @@ class TestCase(unittest.TestCase):
         lp = LoginPage()
         lp.login_service()
         
+        # 进入学生服务界面
+        ssp = SelfServicePage()
+        ssp.student_service()
+        # 进入注册界面
+        stsp = StudentServicePage()
+        stsp.registration()
         # 查询课程
         scp = SearchClassPage()
         scp.search_class()
@@ -52,6 +58,12 @@ class TestCase(unittest.TestCase):
         lp = LoginPage()
         lp.login_service()
         
+        # 进入学生服务界面
+        ssp = SelfServicePage()
+        ssp.student_service()
+        # 进入注册界面
+        stsp = StudentServicePage()
+        stsp.registration()
         # 查询课程
         scp = SearchClassPage()
         scp.search_class()
@@ -75,6 +87,12 @@ class TestCase(unittest.TestCase):
         lp = LoginPage()
         lp.login_service()
         
+        # 进入学生服务界面
+        ssp = SelfServicePage()
+        ssp.student_service()
+        # 进入学生记录界面
+        stsp = StudentServicePage()
+        stsp.student_record()
         # 查看分数
         vgp = ViewGradePage()
         vgp.view_grade()
