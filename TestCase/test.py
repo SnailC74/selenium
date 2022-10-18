@@ -70,7 +70,7 @@ class TestCase(unittest.TestCase):
         
         # 注册/修改课程
         adcp = AddDeleteClassPage()
-        sdcp.add_delete_class()
+        adcp.add_delete_class()
         
      def test_3_view_grade(self):
         """
