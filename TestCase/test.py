@@ -33,30 +33,9 @@ class TestCase(unittest.TestCase):
         lp = LoginPage()
         lp.login_service()
         
-        # 进入学生服务界面
-        ssp = SelfServicePage()
-        ssp.student_servicePage()
-        # 进入注册界面
-        stsp = StudentServicePage()
-        stsp.registrationPage()
         # 查询课程
-        driver.find.element(By.LINK_TEXT, "Search for Classes").click()
-        # 选择查看的学期
-        sel = select(driver.find.element(By.NAME, "p_term"))
-        sel.select_by_value("202310")
-        # sel.select_by_visible_text("2023 Winter")
-        # sel.select_by_index("1")
-        # 搜索
-        driver.find.element(By.XPATH, "//input[@value='Submit']").click()
-        # 选择查看的课程分类
-        sel = select(driver.find.element(By.NAME, "sel_subj"))
-        sel.select_by_value("CS")
-        # sel.select_by_visible_text("Computer Science")
-        # sel.select_by_index("17")
-        # 搜索
-        driver.find.element(By.XPATH, "//input[@value='Course Search']").click()
-        # 选择查看的课程
-        driver.find.element(By.NAME, "SUB_BTN").click()
+        scp = SearchClassPage()
+        scp.search_class()
         
      def test_3_add_and_delete_class(self):
         """
