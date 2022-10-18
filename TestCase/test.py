@@ -12,7 +12,7 @@ class TestCase(unittest.TestCase):
         up = UniversityPage()
         up.studentPage()
         # 进入自助服务界面
-        sp = StudentnPage()
+        sp = StudentPage()
         sp.servicePage()
         # 登录用户ID和密码
         lp = LoginPage()
