@@ -20,3 +20,8 @@ class BasePage：
     # 点击的关键字
     def click(self, loc):
         self.locator_element(loc).click()
+    
+    # 封装下拉框关键字
+    def select(self, loc, value):
+        sel = select(self.locator_element(loc))
+        sel.select_by_value(value)
