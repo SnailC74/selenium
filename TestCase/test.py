@@ -42,55 +42,23 @@ class TestCase(unittest.TestCase):
         添加/删除课程
         :return:
         """
-        global driver
-        # 打开浏览器
-        driver = webdriver.chrome()
-        driver.implicitly_wait(10)
-        # 加载网页
-        driver.get("https://https://www.uregina.ca/")
         # 进入当前学生界面
-        driver.find.element(By.LINK_TEXT, "Current Students").click()
+        up = UniversityPage()
+        up.studentPage()
         # 进入自助服务界面
-        driver.find.element(By.LINK_TEXT, "UR Self-Service").click()
-        # 输入用户ID和密码
-        driver.find.element(By.NAME, "sid").send_keys("*********")
-        driver.find.element(By.NAME, "PIN").send_keys("********")
-        # 点击登录
-        driver.find.element(By.XPATH, "//input[@value='Login']").click()
+        sp = StudentPage()
+        sp.servicePage()
+        # 登录用户ID和密码
+        lp = LoginPage()
+        lp.login_service()
         
-        # 进入学生服务界面
-        driver.find.element(By.LINK_TEXT, "Student").click()
-        # 进入注册界面
-        driver.find.element(By.LINK_TEXT, "Registration").click()
         # 查询课程
-        driver.find.element(By.LINK_TEXT, "Search for Classes").click()
-        # 选择查看的学期
-        sel = select(driver.find.element(By.NAME, "p_term"))
-        sel.select_by_value("202310")
-        # sel.select_by_visible_text("2023 Winter")
-        # sel.select_by_index("1")
-        # 搜索
-        driver.find.element(By.XPATH, "//input[@value='Submit']").click()
-        # 选择查看的课程分类
-        sel = select(driver.find.element(By.NAME, "sel_subj"))
-        sel.select_by_value("CS")
-        # sel.select_by_visible_text("Computer Science")
-        # sel.select_by_index("17")
-        # 搜索
-        driver.find.element(By.XPATH, "//input[@value='Course Search']").click()
-        # 选择查看的课程
-        driver.find.element(By.NAME, "SUB_BTN").click()
+        scp = SearchClassPage()
+        scp.search_class()
         
-        # 注册课程
-        driver.find.element(By.XPATH, "//input[@value='10762 202310']").click()
-        driver.find.element(By.XPATH, "//input[@value='Register']").click()
-        # 课程就成功注册，显示在课程列表中
-        # 删除课程
-        # 在课程列表中的action修改属性为drop
-        sel = select(driver.find.element(By.NAME, "RSTS_IN"))
-        sel.select_by_value("Drop Self-Serv 100% Ref No Grd")
-        # 提交修改
-        driver.find.element(By.XPATH, "//input[@value='Submit Changes']").click()
+        # 注册/修改课程
+        adcp = AddDeleteClassPage()
+        sdcp.add_delete_class()
         
      def test_3_view_grade(self):
         """
