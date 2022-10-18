@@ -25,3 +25,7 @@ class BasePage：
     def select(self, loc, value):
         sel = select(self.locator_element(loc))
         sel.select_by_value(value)
+
+    #  获取文本值
+    def get_value(self, loc):
+        return self.locator_element(loc).text
