@@ -35,9 +35,11 @@ find_element_by_css_selector()
 
 # 1. 设计模式（封装）
 
+PO模式 Page Object Model
+
 1. 基础层：selenium原生的方法
 
-2. 界面对象层：页面的元素和动作
+2. 页面对象层：页面的元素和动作
 
 3. 测试用例层：测试用例和测试数据
 
