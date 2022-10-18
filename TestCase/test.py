@@ -8,7 +8,7 @@ class TestCase(unittest.TestCase):
         登录
         :return:
         """
-        # 进入学生界面
+        # 进入当前学生界面
         up = UniversityPage()
         up.studentPage()
         # 进入自助服务界面
@@ -23,26 +23,22 @@ class TestCase(unittest.TestCase):
         查询课程
         :return
         """
-        global driver
-        # 打开浏览器
-        driver = webdriver.chrome()
-        driver.implicitly_wait(10)
-        # 加载网页
-        driver.get("https://https://www.uregina.ca/")
-        # 选择当前学生界面
-        driver.find.element(By.LINK_TEXT, "Current Students").click()
-        # 选择自助服务界面
-        driver.find.element(By.LINK_TEXT, "UR Self-Service").click()
-        # 输入用户ID和密码
-        driver.find.element(By.NAME, "sid").send_keys("*********")
-        driver.find.element(By.NAME, "PIN").send_keys("********")
-        # 点击登录
-        driver.find.element(By.XPATH, "//input[@value='Login']").click()
+        # 进入当前学生界面
+        up = UniversityPage()
+        up.studentPage()
+        # 进入自助服务界面
+        sp = StudentPage()
+        sp.servicePage()
+        # 登录用户ID和密码
+        lp = LoginPage()
+        lp.login_service()
         
-        # 进入学生界面
-        driver.find.element(By.LINK_TEXT, "Student").click()
+        # 进入学生服务界面
+        ssp = SelfServicePage()
+        ssp.student_servicePage()
         # 进入注册界面
-        driver.find.element(By.LINK_TEXT, "Registration").click()
+        stsp = StudentServicePage()
+        stsp.registrationPage()
         # 查询课程
         driver.find.element(By.LINK_TEXT, "Search for Classes").click()
         # 选择查看的学期
@@ -73,9 +69,9 @@ class TestCase(unittest.TestCase):
         driver.implicitly_wait(10)
         # 加载网页
         driver.get("https://https://www.uregina.ca/")
-        # 选择当前学生界面
+        # 进入当前学生界面
         driver.find.element(By.LINK_TEXT, "Current Students").click()
-        # 选择自助服务界面
+        # 进入自助服务界面
         driver.find.element(By.LINK_TEXT, "UR Self-Service").click()
         # 输入用户ID和密码
         driver.find.element(By.NAME, "sid").send_keys("*********")
@@ -83,7 +79,7 @@ class TestCase(unittest.TestCase):
         # 点击登录
         driver.find.element(By.XPATH, "//input[@value='Login']").click()
         
-        # 进入学生界面
+        # 进入学生服务界面
         driver.find.element(By.LINK_TEXT, "Student").click()
         # 进入注册界面
         driver.find.element(By.LINK_TEXT, "Registration").click()
@@ -128,9 +124,9 @@ class TestCase(unittest.TestCase):
         driver.implicitly_wait(10)
         # 加载网页
         driver.get("https://https://www.uregina.ca/")
-        # Link_text定位
+        # 进入当前学生界面
         driver.find.element(By.LINK_TEXT, "Current Students").click()
-        # Link_text定位
+        # 进入自助服务界面
         driver.find.element(By.LINK_TEXT, "UR Self-Service").click()
         # 输入用户ID和密码
         driver.find.element(By.NAME, "sid").send_keys("*********")
@@ -138,7 +134,7 @@ class TestCase(unittest.TestCase):
         # 点击登录
         driver.find.element(By.XPATH, "//input[@value='Login']").click()
         
-        # 进入学生界面
+        # 进入学生服务界面
         driver.find.element(By.LINK_TEXT, "Student").click()
         # 进入学生记录界面
         driver.find.element(By.LINK_TEXT, "Student Records").click()
