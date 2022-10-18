@@ -65,34 +65,19 @@ class TestCase(unittest.TestCase):
         查看分数
         :return:
         """
-        global driver
-        # 打开浏览器
-        driver = webdriver.chrome()
-        driver.implicitly_wait(10)
-        # 加载网页
-        driver.get("https://https://www.uregina.ca/")
         # 进入当前学生界面
-        driver.find.element(By.LINK_TEXT, "Current Students").click()
+        up = UniversityPage()
+        up.studentPage()
         # 进入自助服务界面
-        driver.find.element(By.LINK_TEXT, "UR Self-Service").click()
-        # 输入用户ID和密码
-        driver.find.element(By.NAME, "sid").send_keys("*********")
-        driver.find.element(By.NAME, "PIN").send_keys("********")
-        # 点击登录
-        driver.find.element(By.XPATH, "//input[@value='Login']").click()
+        sp = StudentPage()
+        sp.servicePage()
+        # 登录用户ID和密码
+        lp = LoginPage()
+        lp.login_service()
         
-        # 进入学生服务界面
-        driver.find.element(By.LINK_TEXT, "Student").click()
-        # 进入学生记录界面
-        driver.find.element(By.LINK_TEXT, "Student Records").click()
         # 查看分数
-        driver.find.element(By.LINK_TEXT, "Final Grades").click()
-        # 选择查看的学期
-        sel = select(driver.find.element(By.NAME, "term_in"))
-        sel.select_by_value("202210")
-        # 提交申请
-        driver.find.element(By.XPATH, "//input[@value='Submit']").click()
-        # 就可以查看到学期所有课程的分数
+        vgp = ViewGradePage()
+        vgp.view_grade()
         
  if __name__ == '__main__':
      unittest.main()
